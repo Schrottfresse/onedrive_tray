@@ -33,6 +33,8 @@ mkdir -p %{buildroot}%{qt_trans_dir}
 install -m 644 ./onedrive_tray-master/onedrive_tray_*.qm -t %{buildroot}%{qt_trans_dir}
 mkdir -p %{buildroot}/usr/lib/systemd/system/
 install -m 644 ./onedrive_tray-master/onedrive_tray.service -t %{buildroot}/usr/lib/systemd/system/
+mkdir -p %{buildroot}/usr/share/licenses/onedrive_tray/
+install -m 644 ./onedrive_tray-master/LICENSE %{buildroot}/usr/share/licenses/onedrive_tray/
 
 %post -p /usr/bin/bash
 systemctl daemon-reload
@@ -45,6 +47,7 @@ systemctl daemon-reload
 %{qt_trans_dir}/onedrive_tray_es.qm
 %{qt_trans_dir}/onedrive_tray_fr.qm
 %{qt_trans_dir}/onedrive_tray_nl.qm
+/usr/share/licenses/onedrive_tray/LICENSE
 
 %changelog
 * Thu Aug 18 2022 Michael Schlapa <michael@schlapa.eu>
